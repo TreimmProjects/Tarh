@@ -88,7 +88,8 @@ function unlockSedgewick() {
     document.getElementById("killBullbtn").style.display = "inline";
     document.getElementById("bullUpgradeCost").style.display = "inline";
     document.getElementById("autobull").style.display = "inline";
-    document.getElementById("story3").innerHTML = "You travel further through the Outlands, along Don's road. A monster here and there, you hone your lacklustre skills. Suddenly, a scaled bull rushes you and knocks you down. Before landing the killing blow on you, a man suddenly shoves a strong sword through the scaled bull's skull. Named Sedgewick, he is a handsome and charming, but down to earth warrior. Together, you epicly fight off a horde of lesser bulls... although Sedgewick does most of the work. ";
+	document.getElementById("story3").innerHTML = "You travel further through the Outlands, along Don's road. A monster here and there, you hone your lacklustre skills. Suddenly, a scaled bull rushes you and knocks you down. Before landing the killing blow on you, a man suddenly shoves a strong sword through the scaled bull's skull. Named Sedgewick, he is a handsome and charming, but down to earth warrior. Together, you epicly fight off a horde of lesser bulls... although Sedgewick does most of the work. ";
+	gameData.unlocked.push("bulls")
   }
 }
 
