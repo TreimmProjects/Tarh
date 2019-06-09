@@ -31,7 +31,7 @@ function upgradeSweep() {
 }
 
 function buyAutomaticSweep() {
-  if (gameData.gold >= 1000 && !gameData.auto.contains("sweep")) {
+  if (gameData.gold >= 1000 && !gameData.auto.includes("sweep")) {
     gameData.gold -= 1000;
     document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
     var btnauto = document.getElementById("autogold");
@@ -41,7 +41,7 @@ function buyAutomaticSweep() {
 }
 
 function unlockSlime() {
-  if (gameData.gold >= 150 && !gameData.unlocked.contains("slime")) {
+  if (gameData.gold >= 150 && !gameData.unlocked.includes("slime")) {
 	gameData.gold -= 150;
 	gameData.unlocked.push("slime")
     document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
@@ -71,7 +71,7 @@ function upgradeSlime(){
 }
 
 function buyAutomaticSlime() {
-  if (gameData.gold >= 2000 && !gameData.auto.contains("slime")) {
+  if (gameData.gold >= 2000 && !gameData.auto.includes("slime")) {
     gameData.gold -= 2000;
     document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
     var btnauto = document.getElementById("autoslime");
@@ -81,7 +81,7 @@ function buyAutomaticSlime() {
 }
 
 function unlockSedgewick() {
-	if (gameData.gold >= 1000 && !gameData.unlocked.contains("bulls")) {
+	if (gameData.gold >= 1000 && !gameData.unlocked.includes("bulls")) {
     gameData.gold -= 1000;
     document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
     document.getElementById("unlockSedgewick").style.display = "none";
@@ -109,7 +109,7 @@ function upgradeBull(){
 }
 
 function buyAutomaticBull() {
-  if (gameData.gold >= 4000 && !gameData.auto.contains("bulls")) {
+  if (gameData.gold >= 4000 && !gameData.auto.includes("bulls")) {
     gameData.gold -= 4000;
     document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
     var btnauto = document.getElementById("autobull");
@@ -127,7 +127,7 @@ if (savegame !== null) {
   document.getElementById("slimeUpgradeCost").innerHTML = "Upgrade Slime Killing (Currently Level " + gameData.slimeLevel + ") Cost: " + gameData.slimeUpgradeCost + " Gold";
   document.getElementById("bullUpgradeCost").innerHTML = "Upgrade Bull Killing (Currently Level " + gameData.bullLevel + ") Cost: " + gameData.bullUpgradeCost + " Gold";
 
-  if (gameData.unlocked.contains("slime")) {
+  if (gameData.unlocked.includes("slime")) {
 	  document.getElementById("unlockSlime").style.display = "none";
 	  document.getElementById("killSlimebtn").style.display = "inline";
 	  document.getElementById("slimeUpgradeCost").style.display = "inline";
@@ -136,7 +136,7 @@ if (savegame !== null) {
       document.getElementById("unlockSedgewick").style.display = "inline";
   }
 
-  if (gameData.unlocked.contains("bulls")) {
+  if (gameData.unlocked.includes("bulls")) {
 	  document.getElementById("goldAcquired").innerHTML = gameData.gold + " Gold";
 	  document.getElementById("unlockSedgewick").style.display = "none";
 	  document.getElementById("killBullbtn").style.display = "inline";
@@ -145,17 +145,17 @@ if (savegame !== null) {
       document.getElementById("story3").innerHTML = "You travel further through the Outlands, along Don's road. A monster here and there, you hone your lacklustre skills. Suddenly, a scaled bull rushes you and knocks you down. Before landing the killing blow on you, a man suddenly shoves a strong sword through the scaled bull's skull. Named Sedgewick, he is a handsome and charming, but down to earth warrior. Together, you epicly fight off a horde of lesser bulls... although Sedgewick does most of the work. ";
   }
 
-  if (gameData.auto.contains("sweep")) {
+  if (gameData.auto.includes("sweep")) {
 	  var btnauto = document.getElementById("autogold");
 	  btnauto.style.display = "none";
   }
 
-  if (gameData.auto.contains("slime")) {
+  if (gameData.auto.includes("slime")) {
 	  var btnauto = document.getElementById("autoslime");
 	  btnauto.style.display = "none";
   }
 
-  if (gameData.auto.contains("bulls")) {
+  if (gameData.auto.includes("bulls")) {
 	  var btnauto = document.getElementById("autobull");
 	  btnauto.style.display = "none";
   }
@@ -166,9 +166,9 @@ var saveGameLoop = window.setInterval(function() {
 }, 15000);
 
 var mainGameLoop = window.setInterval(function () {
-	if (gameData.auto.contains("sweep")) sweepFloors();
-	if (gameData.auto.contains("slime")) killSlime();
-	if (gameData.auto.contains("bulls")) killBull();
+	if (gameData.auto.includes("sweep")) sweepFloors();
+	if (gameData.auto.includes("slime")) killSlime();
+	if (gameData.auto.includes("bulls")) killBull();
 }, 1000);
 
 
